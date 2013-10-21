@@ -3,21 +3,46 @@
 
 /*! \file gtypes.h
   \brief Graphics datatypes and operator.
-  \author Edwin Rommen
+  \author cxnf
   \version 0.1
   \date 2013/09/25
   \copyright GNU Public License.
 */
 
 
-#include "dtypes.h"
+#include "codes.h"
 #include <stdint.h>
 
+
+#define RED     0xF800
+#define GREEN   0x07E0
+#define BLUE    0x001F
+#define YELLOW  0xFFE0
+#define MAGENTA 0xF81F
+#define CYAN    0x07FF
+#define BLACK   0x0000
+#define WHITE   0xFFFF
+
+// use to define color with all color components in 1 to 0 range
+// compiler should optimize all calculations out of the assembly into a constant value
+// this only works when all 3 components are given as constants
+#define RGB(r,g,b) ((((uint16_t)(32.0f * (r))) << 11) | (((uint16_t)(64.0f * (g))) <<  5) | ((uint16_t)(32.0f * (b))))
+
+
+// ----------------- Typedefs ----------------------------------------------------------------------
 
 typedef uint16_t Color;                           //!< Define 'color' type.
 
 
 // ----------------- Structs -----------------------------------------------------------------------
+
+/*! \struct Vector
+  \brief Datatype of vector.
+  Vector with 3 fields.
+*/
+typedef struct Vector {
+  float x, y, z;                                //!< Coordinate.
+} Vector;
 
 /*! \struct Vertex
   \brief Vertex datatype.
@@ -58,6 +83,9 @@ typedef struct Mesh {
 
 
 typedef void (*meshIterator)(Vertex const *, Vertex const *); //!< Callback function to iterate through all lines in a mesh.
+
+
+// ----------------- Vector Functions --------------------------------------------------------------
 
 
 // ----------------- Vertex Functions --------------------------------------------------------------

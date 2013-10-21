@@ -1,8 +1,8 @@
 #include "gtypes.h"
 
-/*! \file dtypes.c
-  \brief Datatypes and operators implementation.
-  \author Edwin Rommen
+/*! \file gtypes.c
+  \brief Graphics datatypes and operator.
+  \author cxnf
   \version 0.1
   \date 2013/09/26
   \copyright GNU Public License.

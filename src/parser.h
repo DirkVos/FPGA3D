@@ -1,10 +1,10 @@
 #pragma once
 
 /*! \file parser.h
-  \brief Interface of wavefront parser.
-  \author Edwin Rommen
-  \version 1
-  \date 2013-10-16
+  \brief Wavefront obj parser.
+  \author cxnf
+  \version 0.1
+  \date 2013-10-21
   \copyright GNU Public License
 */
 
@@ -24,5 +24,6 @@ enum codes loadWavefront(char const * path, Mesh * mesh);
 /*! \brief Destroys a mesh.
   Frees memory allocated by 'loadWavefront'.
   \param mesh Pointer to mesh to free.
+  \return Return code.
 */
 enum codes destroyWavefront(Mesh * mesh);
